@@ -8,7 +8,7 @@ Every project neds a quality README, with information about the application itse
 N/A
 
 ## Installation
-To generate your own README, git clone the repo to your local machine. Next run "npm install" in order to get the correct dependencies in the package.json. Next install inquirer buy using "npm install inquirer@8.2.4" to get the necessary version of inquirer for the prompts.
+To generate your own README, git clone the repo to your local machine. First run "npm init" to initiate the installation. Next run "npm install" in order to get the correct dependencies in the package.json. Next install inquirer buy using "npm install inquirer@8.2.4" to get the necessary version of inquirer for the prompts.
 
 The application will being after opening the "index.js" file with the integrated terminal. Enter in "node index.js" to begin the application.
 
