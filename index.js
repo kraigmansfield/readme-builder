@@ -15,6 +15,11 @@ inquirer
     },
     {
       type: 'input',
+      message: 'Please provide a table of contents.',
+      name: 'userToc',
+    },
+    {
+      type: 'input',
       message: 'Are there any installation steps?',
       name: 'userInstall',
     },
@@ -24,36 +29,63 @@ inquirer
       name: 'userUse',
     },
     {
+        type: 'list',
+        message: 'Do you have any licenses?',
+        name: 'userLicense',
+        choices: ["MIT", "Apache", "Creative Commons"]
+    },
+    {
       type: 'input',
       message: 'Do you have anyone to credit?',
       name: 'userCredit',
     },
     {
       type: 'input',
-      message: 'Do you have any licenses?',
-      name: 'userLicense',
+      message: 'Do you have tests set up?',
+      name: 'userTest',
+    },
+    {
+      type: 'input',
+      message: 'What is your GitHub URL?',
+      name: 'userGit',
+    },
+    {
+      type: 'input',
+      message: 'What is your LinkedIn URL?',
+      name: 'userLink',
     },
     
   ])
   .then((response) => {
-    fs.writeFile(`${response.userTitle}`,
-    `## Project Title
-    ${response.userTitle}
+    fs.writeFile(`${response.userTitle}.md`,
+`# Project Title
+${response.userTitle}
     
-    ## Description
-    ${response.userDesc}
+## Description
+${response.userDesc}
     
-    ## Installation
-    ${response.userInstall}
+## Table of Contents
+${response.userToc}
+
+## Installation
+${response.userInstall}
     
-    ## Usage
-    ${response.userUse}
+## Usage
+${response.userUse}
     
-    ## Credits
-    ${response.userCredit}
+## License
+${response.userLicense}
     
-    ## License
-    ${response.userLicense}`,(err) => {
+## Credit
+${response.userCredit}
+    
+## Tests
+${response.userTest}
+    
+## Questions
+Github:https://github.com/${response.userGit}
+LinkedIn:https://www.linkedin.com/in/${response.userLink}
+`,(err) => {
         if (err) {
             throw err
         }
